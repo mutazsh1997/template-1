@@ -1,0 +1,119 @@
+body {
+    font-family: Rolway, sans-serif;
+}
+.hero_title {
+    text-align: center;
+    color: $color-white;
+
+    & h1 {
+        & strong {
+            color: $color-primary;
+        }
+        font-size: 6rem;
+        font-weight: 100;
+        margin-bottom: 1rem;
+
+        @include screen(phone) {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+    }
+    & p {
+        font-size: 2.4rem;
+
+        @include screen(phone) {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.secondry_title {
+    text-align: center;
+    color: $color-grey-dark-3;
+
+    & h2 {
+        font-size: 4rem;
+        margin-bottom: 2.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        transition: transform 0.2s ease-out;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, 10px);
+            width: 30%;
+            height: 3px;
+            background-color: $color-primary-light;
+            transition: width 0.5s;
+
+            @include screen(phone) {
+                top: 70%;
+            }
+        }
+        &:hover {
+            transform: skew(20deg);
+            transition: transform 1s;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    & p {
+        font-size: 1.4rem;
+    }
+}
+.tertiary__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include screen(tab-land) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    @include screen(tab-port) {
+        margin-bottom: 3rem;
+    }
+    & h3 {
+        color: $color-grey-dark-2;
+        font-size: 3rem;
+        font-weight: 100;
+        text-transform: capitalize;
+    }
+    & p {
+        font-size: 1.6rem;
+        word-spacing: 3px;
+        color: #777;
+
+        @include screen(tab-port) {
+            width: 80%;
+            line-height: 1.4;
+            margin: 2rem 0;
+        }
+    }
+    & a {
+        background-color: #55c57a;
+        padding: 10px 20px;
+        color: #fff;
+        width: 150px;
+        text-decoration: none;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            background-color: #66d38a;
+            transform: scale(1.1);
+            border-radius: 20px 0;
+        }
+    }
+}

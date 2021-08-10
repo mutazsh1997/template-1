@@ -1,0 +1,259 @@
+.our-location,
+.about_us {
+    @include sectionPadding;
+
+    &__Description {
+        margin-top: 5rem;
+        gap: $gutter-vertical;
+        display: flex;
+        justify-content: space-between;
+
+        @include screen(tab-port) {
+            flex-direction: column;
+        }
+        &__image {
+            flex: 1 1 100%;
+            order: 2;
+            height: 40vh;
+            @include screen(tab-port) {
+                flex: auto;
+            }
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.testimonial {
+    padding: 2rem 0;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(19, 19, 19, 0.6)), url(../../images/TeamWork.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    & div.container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    & i {
+        color: $color-white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    &__user {
+        color: $color-white;
+        text-align: center;
+
+        &__image {
+            width: 15rem;
+            margin: 0 auto;
+
+            & img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+        &__description {
+            & p {
+                font-size: 1.4rem;
+                margin: 10px auto;
+            }
+            & h4 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.ourServices {
+    @include sectionPadding;
+
+    &__list {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-evenly;
+
+        & li {
+            display: flex;
+
+            column-gap: 2rem;
+            width: 47%;
+            @include screen(tab-port) {
+                width: 80%;
+                row-gap: 2rem;
+            }
+            & i {
+                font-size: 3rem;
+                background: #fff;
+                border-radius: 50%;
+                width: 70px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                color: $color-primary-dark;
+
+                @include screen(tab-port) {
+                    align-self: center;
+                    height: 35px;
+                    line-height: 35px;
+                }
+            }
+        }
+    }
+}
+.ourTeam {
+    background-color: $color-white;
+    padding-top: 6rem;
+
+    &__list {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 20%;
+
+            & figure {
+                position: relative;
+
+                & img {
+                    width: 100%;
+                    transition: opacity 0.3s ease-out;
+                    user-select: none;
+                }
+                & figcaption {
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, 100%);
+                    color: $color-white;
+                    opacity: 0;
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+                    transition: all 0.5s 0.2s ease-in;
+                    user-select: none;
+                    & h5 {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: 0.6rem;
+                    }
+                }
+                &:hover {
+                    background-color: rgb(20, 100, 80);
+                    & img {
+                        opacity: 0.1;
+                    }
+                    & figcaption {
+                        opacity: 1;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pricing {
+    @include sectionPadding;
+
+    &__cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include screen(tab-land) {
+            padding: 0 2rem;
+        }
+        @include screen(phone) {
+            justify-content: center;
+        }
+    }
+    &__card {
+        flex: 0.1 0 23%;
+        height: max-content;
+        background: $color-white;
+        margin-top: 4rem;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba($color-primary-light, 0.2);
+
+        @include screen(tab-port) {
+            flex: 0.1 0 49%;
+        }
+        @include screen(phone) {
+            flex: 0.1 0 90%;
+        }
+
+        &-header {
+            padding: 2rem;
+            & h3 {
+                color: $color-primary;
+                font-size: 3.4rem;
+                letter-spacing: 0.2rem;
+                margin-bottom: 1.4rem;
+                font-weight: lighter;
+                @include screen(phone) {
+                    font-weight: bold;
+                }
+            }
+            & p {
+                font-size: 1.4rem;
+                color: $color-grey-dark-2;
+
+                @include screen(phone) {
+                    font-size: 3.4rem;
+                }
+            }
+        }
+
+        &-content {
+            padding: 4rem 2rem;
+            & p {
+                line-height: 2;
+                font-size: 1.4rem;
+
+                @include screen(phone) {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+        &-button {
+            width: 100%;
+            padding: 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            background-color: $color-primary-dark;
+            color: $color-white;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: $color-primary-light;
+            }
+        }
+    }
+}
+
+.our-location {
+    padding: 2rem 0;
+    background: $color-tertiary-dark;
+
+    &__Description {
+        & .tertiary__title {
+            h3 {
+                color: $color-grey-light-1;
+            }
+            p {
+                color: $color-grey-light-1;
+            }
+        }
+    }
+}

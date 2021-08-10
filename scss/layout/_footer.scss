@@ -1,0 +1,33 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    align-items: center;
+
+    & p {
+        font-size: 1.4rem;
+    }
+    & nav {
+        & ul li a {
+            color: $color-black;
+
+            &:hover {
+                color: $color-tertiary-dark;
+            }
+        }
+    }
+    &.footer__phone {
+        @include screen(phone) {
+            flex-direction: column-reverse;
+
+            & nav {
+                ul li {
+                    margin-bottom: 10px;
+                    &:not(:last-of-type) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }   
+    }
+}

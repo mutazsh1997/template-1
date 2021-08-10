@@ -1,0 +1,38 @@
+@mixin screen($breakpoint) {
+    @if ($breakpoint == smPhone) {
+        @media only screen and (max-width: 400px) {
+            @content;
+        } //400px
+    }
+    @if ($breakpoint == phone) {
+        @media only screen and (max-width: 600px) {
+            @content;
+        } //600px
+    }
+    @if ($breakpoint == tab-port) {
+        @media only screen and (max-width: 900px) {
+            @content;
+        } //900px
+    }
+    @if ($breakpoint == tab-land) {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        } //1200px
+    }
+    @if ($breakpoint == big-desktop) {
+        @media only screen and (min-width: 1800px) {
+            @content;
+        } //1800
+    }
+}
+
+@mixin hoverEffect {
+    transition: color 0.2s, transform 0.3s;
+    &:hover {
+        color: $color-grey-light-2;
+        transform: scale(1.1);
+    }
+}
+@mixin sectionPadding {
+    padding: 6rem 0;
+}
