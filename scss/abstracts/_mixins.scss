@@ -29,7 +29,7 @@
 @mixin hoverEffect {
     transition: color 0.2s, transform 0.3s;
     &:hover {
-        color: $color-grey-light-2;
+        color: $color-primary-light;
         transform: scale(1.1);
     }
 }
